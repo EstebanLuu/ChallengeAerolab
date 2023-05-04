@@ -1,19 +1,19 @@
 import * as React from "react";
+import LandingPage from "../Pages/LandingPage";
+import Navbar from "../components/Navbar";
+import styled from "styled-components";
+import "./app.css";
 
-import logo from "../assets/logo.svg";
-
-import styles from "./App.module.scss";
+const AppContainer = styled.div`
+  height: 100vh;
+`;
 
 const App: React.FC = () => {
   return (
-    <main className={styles.container}>
-      <header className={styles.header}>
-        <h1>
-          <img alt="Aerolab" src={logo} width={128} />
-        </h1>
-        <h3>Lets get this party started</h3>
-      </header>
-    </main>
+    <AppContainer>
+      <Navbar />
+      <LandingPage />
+    </AppContainer>
   );
 };
 

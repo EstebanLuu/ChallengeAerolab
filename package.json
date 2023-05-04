@@ -7,10 +7,15 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@types/styled-components": "^5.1.26",
     "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react-dom": "^17.0.0",
+    "styled-components": "^5.3.10"
   },
   "devDependencies": {
+    "@testing-library/react": "^14.0.0",
+    "@types/jest": "^29.5.1",
+    "@types/mocha": "^10.0.1",
     "@types/node": "^14.14.31",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
