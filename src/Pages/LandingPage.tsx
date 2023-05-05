@@ -1,36 +1,21 @@
-import React from "react";
+import * as React from "react";
+import Header from "../components/Header";
+import Navbar from "../components/Navbar";
 import styled from "styled-components";
-import header from "../assets/header.png";
+import "./LandingPage.css";
+import Layout from "~/components/Layout";
 
-const LandingContainer = styled.div``;
-
-const Header = styled.div`
-  width: 100%;
-  img {
-    width: 100%;
-  }
-  height: 400px;
-  position: relative;
-  overflow: hidden;
+const LandingPageContainer = styled.div`
+  height: 100vh;
 `;
 
-const Electronics = styled.span`
-  position: absolute;
-  left: 100px;
-  bottom: 50px;
-  color: #ffffff;
-  font-size: 50px;
-  font-weight: 600;
-`;
-
-const LandingPage = () => {
+const LandingPage: React.FC = () => {
   return (
-    <LandingContainer>
-      <Header>
-        <img src={header} alt="" />
-        <Electronics>Electronics</Electronics>
-      </Header>
-    </LandingContainer>
+    <LandingPageContainer>
+      <Navbar />
+      <Header />
+      <Layout />
+    </LandingPageContainer>
   );
 };
 

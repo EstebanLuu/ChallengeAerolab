@@ -1,19 +1,12 @@
-import * as React from "react";
-import LandingPage from "../Pages/LandingPage";
-import Navbar from "../components/Navbar";
-import styled from "styled-components";
+import React from "react";
+import LandingPage from "~/Pages/LandingPage";
 import "./app.css";
 
-const AppContainer = styled.div`
-  height: 100vh;
-`;
-
-const App: React.FC = () => {
+const App = () => {
   return (
-    <AppContainer>
-      <Navbar />
+    <>
       <LandingPage />
-    </AppContainer>
+    </>
   );
 };
 
