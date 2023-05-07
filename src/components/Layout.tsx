@@ -37,7 +37,7 @@ const Filter = styled.div<ShadowedProps>`
 
 const Layout = () => {
   const [active, setActive] = useState<number>(1);
-
+// 
   const handleClick = (n = 1) => {
     setActive(n);
     console.log(n);
