@@ -17,30 +17,24 @@ const Product = styled.div`
   padding: 20px;
   background-color: green;
 `;
-//  
-interface ShadowedProps {
-  readonly isActive: boolean;
-  readonly isActive2: boolean;
-  readonly isActive3: boolean;
+//
+
+interface ButtonProps {
+  selected: boolean;
 }
 
-const Filter = styled.div<ShadowedProps>`
+const Button = styled.button<ButtonProps>`
   padding: 20px;
   cursor: pointer;
-  background-color: ${(props) =>
-    props.isActive === true ? "#0ad4fa" : "rgba(0,0,0,1)"};
-  background-color: ${(props) =>
-    props.isActive2 === true ? "#0ad4fa" : "rgba(0,0,0,1)"};
-  background-color: ${(props) =>
-    props.isActive3 === true ? "#0ad4fa" : "rgba(0,0,0,1)"};
+  background-color: ${({ selected }) => (selected ? "#6ee8ff" : "grey")};
+  color: white;
 `;
 
 const Layout = () => {
-  const [active, setActive] = useState<number>(1);
-// 
-  const handleClick = (n = 1) => {
-    setActive(n);
-    console.log(n);
+  const [selectedButton, setSelectedButton] = useState<number>(0);
+
+  const handleButtonClick = (buttonIndex: number) => {
+    setSelectedButton(buttonIndex);
   };
 
   return (
@@ -48,16 +42,25 @@ const Layout = () => {
       <Products>
         <Product>16 of 32 products</Product>
         <Product>Sort by: </Product>
-
-        <Filter isActive={true} isActive2={false} isActive3={false}>
+        <Button
+          selected={selectedButton === 0}
+          onClick={() => handleButtonClick(0)}
+        >
           Most recent
-        </Filter>
-        <Filter isActive={false} isActive2={true} isActive3={false}>
+        </Button>
+        <Button
+          selected={selectedButton === 1}
+          onClick={() => handleButtonClick(1)}
+        >
           Lowest price
-        </Filter>
-        <Filter isActive={false} isActive2={false} isActive3={true}>
+        </Button>
+        <Button
+          selected={selectedButton === 2}
+          onClick={() => handleButtonClick(2)}
+        >
+          {" "}
           Highest price
-        </Filter>
+        </Button>
       </Products>
     </LayoutContainer>
   );
