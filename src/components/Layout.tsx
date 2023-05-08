@@ -17,7 +17,7 @@ const Product = styled.div`
   padding: 20px;
   background-color: green;
 `;
-
+//  
 interface ShadowedProps {
   readonly isActive: boolean;
   readonly isActive2: boolean;
