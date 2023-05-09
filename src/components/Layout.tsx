@@ -2,32 +2,41 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const LayoutContainer = styled.div`
-  padding: 50px 100px;
-  background-color: red;
+  padding: 10px 100px;
 `;
 
 const Products = styled.div`
-  padding: 20px;
-  background-color: blue;
+  padding: 10px;
   display: flex;
+  font-size: 15px;
   align-items: center;
+  border-bottom: 1px solid #ededed;
 `;
 
 const Product = styled.div`
   padding: 20px;
-  background-color: green;
+  color: #626262;
 `;
-//
+
+const SortBy = styled.div`
+  padding: 10px;
+  color: #aeaeae;
+  font-size: 15px;
+`;
 
 interface ButtonProps {
   selected: boolean;
 }
 
 const Button = styled.button<ButtonProps>`
-  padding: 20px;
+  padding: 8px 8px;
   cursor: pointer;
-  background-color: ${({ selected }) => (selected ? "#6ee8ff" : "grey")};
-  color: white;
+  background-color: ${({ selected }) => (selected ? "#0ad4fa" : "#ededed")};
+  color: ${({ selected }) => (selected ? "white" : "#acacac")};
+  margin: 0 10px;
+  border-radius: 13px;
+  border: none;
+  font-size: 15px;
 `;
 
 const Layout = () => {
@@ -41,7 +50,7 @@ const Layout = () => {
     <LayoutContainer>
       <Products>
         <Product>16 of 32 products</Product>
-        <Product>Sort by: </Product>
+        <SortBy>Sort by: </SortBy>
         <Button
           selected={selectedButton === 0}
           onClick={() => handleButtonClick(0)}
@@ -62,6 +71,7 @@ const Layout = () => {
           Highest price
         </Button>
       </Products>
+      
     </LayoutContainer>
   );
 };
