@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "../assets/logo.svg";
 import Coin from "../assets/icons/coin.svg";
 import styled from "styled-components";
+import { User } from "~/types";
+import dotenv from "dotenv";
+dotenv.config();
 
 const NavbarContainer = styled.nav`
   width: 100%;
@@ -40,16 +43,40 @@ const Puntos = styled.div`
 `;
 
 const Navbar = () => {
+  const [userData, setUserData] = useState<User[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // const response = await fetch(`${UserGet}`);
+        const response = await fetch(
+          `https://private-e7225d3-aerolabchallenge.apiary-mock.com/user/me`
+        );
+        const data = await response.json();
+        setUserData([data]);
+        console.log(process.env.API_GET_USER);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <NavbarContainer>
       <img alt="Aerolab" src={Logo} />
-      <PersonalData>
-        <p>John Kite</p>
-        <Puntos>
-          <p>6000</p>
-          <img alt="" src={Coin} />
-        </Puntos>
-      </PersonalData>
+      {userData.map((ele: User) => {
+        return (
+          <PersonalData key={ele.id}>
+            <p>{ele.name}</p>
+            <Puntos>
+              <p>{ele.points}</p>
+              <img alt="" src={Coin} />
+            </Puntos>
+          </PersonalData>
+        );
+      })}
     </NavbarContainer>
   );
 };
