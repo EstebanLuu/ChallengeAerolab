@@ -3,8 +3,6 @@ import Logo from "../assets/logo.svg";
 import Coin from "../assets/icons/coin.svg";
 import styled from "styled-components";
 import { User } from "~/types";
-import dotenv from "dotenv";
-dotenv.config();
 
 const NavbarContainer = styled.nav`
   width: 100%;
@@ -48,18 +46,15 @@ const Navbar = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const response = await fetch(`${UserGet}`);
         const response = await fetch(
           `https://private-e7225d3-aerolabchallenge.apiary-mock.com/user/me`
         );
         const data = await response.json();
         setUserData([data]);
-        console.log(process.env.API_GET_USER);
       } catch (error) {
         console.error(error);
       }
     };
-
     fetchData();
   }, []);
 

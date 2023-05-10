@@ -11,7 +11,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^4.14.1
   '@typescript-eslint/parser': ^4.14.1
   '@vitejs/plugin-react-refresh': ^1.1.0
-  dotenv: ^16.0.3
+  dotenv: ^8.2.0
   eslint: ^7.19.0
   eslint-config-prettier: ^7.2.0
   eslint-plugin-cypress: ^2.11.2
@@ -29,7 +29,7 @@ specifiers:
 
 dependencies:
   '@types/styled-components': 5.1.26
-  dotenv: 16.0.3
+  dotenv: 8.6.0
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   styled-components: 5.3.10_sfoxds7t5ydpegc3knd667wn6m
@@ -1105,9 +1105,9 @@ packages:
     resolution: {integrity: sha512-X7BJ2yElsnOJ30pZF4uIIDfBEVgF4XEBxL9Bxhy6dnrm5hkzqmsWHGTiHqRiITNhMyFLyAiWndIJP7Z1NTteDg==}
     dev: true
 
-  /dotenv/16.0.3:
-    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
-    engines: {node: '>=12'}
+  /dotenv/8.6.0:
+    resolution: {integrity: sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==}
+    engines: {node: '>=10'}
     dev: false
 
   /electron-to-chromium/1.4.382:
