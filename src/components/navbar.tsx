@@ -48,6 +48,8 @@ const Navbar = () => {
       try {
         const response = await fetch(
           `https://private-e7225d3-aerolabchallenge.apiary-mock.com/user/me`
+
+          
         );
         const data = await response.json();
         setUserData([data]);
