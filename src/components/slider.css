@@ -1,0 +1,27 @@
+.my-slider {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px;
+}
+
+.slick-slide img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.slick-dots {
+  display: flex !important;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.slick-dots li button:before {
+  font-size: 14px;
+  color: #fff;
+  opacity: 0.5;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+}
