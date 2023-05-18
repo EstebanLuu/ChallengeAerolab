@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import styled from "styled-components";
 import "./LandingPage.css";
 import Layout from "~/components/Layout";
-import Myslider from "components/"
+import Myslider from "components/MySlider"
 
 const LandingPageContainer = styled.div`
   height: 100vh;
@@ -16,7 +16,7 @@ const LandingPage: React.FC = () => {
       <Navbar />
       <Header />
       <Layout />
-      <MySlider />
+      <Myslider />
       {/*  */}
     </LandingPageContainer>
   );
