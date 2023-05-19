@@ -19,6 +19,7 @@ const LandingPage: React.FC = () => {
       <Myslider />
       {/*  */}
     </LandingPageContainer>
+    // 
   );
 };
 
